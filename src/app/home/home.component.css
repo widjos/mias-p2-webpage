@@ -1,0 +1,26 @@
+body {
+    background-image: url("/src/assets/stefano-ghezzi-3WDTjXqVfo0-unsplash.jpg");
+    width: auto;
+    height: 100%;
+    background-color: #cccccc;
+   }
+
+   .container{
+    background-image: url(src/assets/stefano-ghezzi-3WDTjXqVfo0-unsplash.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    padding: 18%;
+}
+
+h1 {
+    font-size: 2rem;
+    color: whitesmoke;
+    font-weight: 500;
+    background-color: rgb(136, 152, 153,15);
+    padding: 50px;
+    text-align: center;
+    border-radius: 10%;
+    border: black;
+}

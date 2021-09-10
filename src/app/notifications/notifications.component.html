@@ -1,0 +1,68 @@
+<div class="info"> Denuncias  </div>
+<div class="container">
+    <label class="info"> Denuncias Sin resolver </label>
+    <br>
+    <label class="info">
+        Aqui escriba la denuncia
+    </label>
+    <input type="text" class="form-control" [(ngModel)]="detail"> 
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"> Id_denuncia</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col"> Solucionada</th>
+          <th scope="col"> id_user</th>
+          <th scope="col"> id_producto</th>
+          <th scope="col"> Solucionar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" *ngFor="let item of unsolvedReport">
+          <th> {{item.ID_DENUNCIA}}</th>
+          <th> {{item.DESCRIPCION }}</th>
+          <th> {{item.SOLUCIONADA}}</th>
+          <th> {{item.ID_USER}}</th>
+          <th> {{item.ID_PRODUCTO}}</th>
+          <th> 
+            <button (click)= "solucionar(item.ID_USER, detail, item.ID_DENUNCIA )" type="submit" class="btn btn-primary"> Solucionar 
+
+            </button> </th>
+  
+        </tr>
+  
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="container">
+    <label class="info"> Denuncias Resueltas</label>
+    <br>
+  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"> Id_denuncia</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col"> Solucionada</th>
+          <th scope="col"> id_user</th>
+          <th scope="col"> id_producto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" *ngFor="let item of solvedReport">
+          <th> {{item.ID_DENUNCIA}}</th>
+          <th> {{item.DESCRIPCION }}</th>
+          <th> {{item.SOLUCIONADA}}</th>
+          <th> {{item.ID_USER}}</th>
+          <th> {{item.ID_PRODUCTO}}</th>
+
+        </tr>
+  
+      </tbody>
+    </table>
+  </div>

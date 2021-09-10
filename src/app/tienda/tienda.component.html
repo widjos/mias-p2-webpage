@@ -1,0 +1,129 @@
+<div class="container">
+
+    <h2>Bienvenido A su tienda de confianza</h2>
+<div  class="row">
+    <div class="col-sm"> <button type="submit" class="btn btn-primary"> Normal </button></div>
+    <div class="col-sm"> <button type="submit" class="btn btn-primary"> Por categoria </button>  </div>
+    <div class="col-sm"><button type="submit" class="btn btn-primary"> Precio ascendente </button></div>
+    <div class="col-sm"><button  type="submit" class="btn btn-primary"> Precio descendente </button></div>
+    <div class="col-sm"> <input >  <button type="submit" class="btn btn-primary"> Buscar por Etiqueta </button></div>
+</div>
+
+</div>
+<br>
+<div class="container">
+    <label> Lista de productos  </label>
+    <br>
+
+      <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"> Id producto</th>
+                    <th scope="col"> Imagen</th>
+                    <th scope="col"> Nombre</th>
+                    <th scope="col"> Precio </th>
+                    <th scope="col"> Info </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor="let item of listProductos">
+                    <th> {{item.ID_PRODUCTO}}</th>
+                    <th> <img class="img-responsive" src='../../assets/pera.jpeg'></th>
+                    <th> {{item.NOMBRE }}</th>
+                    <th>  {{item.PRECIO_UNITARIO}}</th>
+                    <th> <button (click)= "infoProducto(item.ID_PRODUCTO)" type="submit" class="btn btn-primary"> Info</button> </th>
+                </tr>
+
+            </tbody>
+        </table>
+    
+</div>
+
+
+
+<div class="container">
+    <label> Lista de productos Acendentes  </label>
+    <br>
+
+      <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"> Id producto</th>
+                    <th scope="col"> Imagen</th>
+                    <th scope="col"> Nombre</th>
+                    <th scope="col"> Precio </th>
+                    <th scope="col"> Info </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor="let item of listAsc">
+                    <th> {{item.ID_PRODUCTO}}</th>
+                    <th> <img class="img-responsive" src='../../assets/pera.jpeg'></th>
+                    <th> {{item.NOMBRE }}</th>
+                    <th>  {{item.PRECIO_UNITARIO}}</th>
+                    <th> <button  type="submit" class="btn btn-primary"> Info</button> </th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    
+
+<div class="container">
+    <label> Lista de productos Descendentes  </label>
+    <br>
+
+      <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"> Id producto</th>
+                    <th scope="col"> Imagen</th>
+                    <th scope="col"> Nombre</th>
+                    <th scope="col"> Precio </th>
+                    <th scope="col"> Info </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor="let item of listDesc">
+                    <th> {{item.ID_PRODUCTO}}</th>
+                    <th> <img class="img-responsive" src='../../assets/pera.jpeg'></th>
+                    <th> {{item.NOMBRE }}</th>
+                    <th>  {{item.PRECIO_UNITARIO}}</th>
+                    <th> <button  type="submit" class="btn btn-primary"> Info</button> </th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="container">
+        <label> Lista Categoria  </label>
+        <br>
+    
+          <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"> Id producto</th>
+                        <th scope="col"> Categoria </th>
+                        <th scope="col"> Imagen</th>
+                        <th scope="col"> Nombre</th>
+                        <th scope="col"> Precio </th>
+                        <th scope="col"> Info </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row" *ngFor="let item of listCategoria">
+                        <th> {{item.ID_PRODUCTO}}</th>
+                        <th> {{item.CATEGORIA}} </th>
+                        <th> <img class="img-responsive" src='../../assets/pera.jpeg'></th>
+                        <th> {{item.NOMBRE }}</th>
+                        <th>  {{item.PRECIO_UNITARIO}}</th>
+                        <th> <button  type="submit" class="btn btn-primary"> Info</button> </th>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>

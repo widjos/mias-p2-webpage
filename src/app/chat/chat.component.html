@@ -1,0 +1,37 @@
+
+<div class="container">
+    <form #formTempo= "ngForm">
+        <input type="text" class="form-control" [(ngModel)]="mensaje.detail" name="detail" #pass="ngModel"
+                    required>
+
+                <button (click)="enviarMensaje()" type="submit" class="btn btn-primary" [disabled]="formTempo.invalid">
+                    Crear Categria</button>
+                </form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <label class="info"> Categorias Existentes </label>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"> NOMBRE</th>
+                    <th scope="col"> FECHA</th>
+                    <th scope="col"> Mensaje</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor="let item of chatForm">
+                    <th> {{item.NOMBRE}} </th>
+                    <th> {{item.FECHA }}</th>
+                    <th> {{item.MENSAJE }}</th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

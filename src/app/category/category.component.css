@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap');
+
+p {
+    padding: 1.5%;
+    font-size: 1.5rem;
+    font-family: 'Catamaran', sans-serif;
+}
+
+
+.info {
+    font-size: 1.2rem;
+    font-family: 'Catamaran', sans-serif;
+}

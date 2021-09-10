@@ -1,0 +1,61 @@
+<div class="container">
+ <h3> Publica aqui tus Productos </h3>
+ <p class="lead">
+    Aqui puede publicar sus productos para que la gente los compre.    
+ </p>
+  </div> 
+  <br>
+  <br>
+<div class="container">
+    <form #productForm= "ngForm">
+    <div class="row">
+      <div class="col-sm">
+        <label class="info"> Nombre </label>
+        <input type="text" class="form-control" [(ngModel)]="formData.nombre" name="nombre" #pass="ngModel"
+            required>
+      </div>
+      <div class="col-sm">
+        <label class="info"> Costo </label>
+        <input type="text" class="form-control" [(ngModel)]="formData.costo" name="costo" #pass="ngModel"
+            required>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <label class="info"> Detalle </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.detalle" name="detalle" #pass="ngModel"
+                required>
+        </div>
+        <div class="col-sm">
+            <label class="info"> Categoria </label>
+            <select class="form-control form-control-sm"
+            [(ngModel)] = "formData.idCategoria"
+            #idCategoria = ngModel
+            name="idCategoria">
+              <option 
+                *ngFor="let categ of listCategoria"  
+                 >{{categ.NOMBRE}} </option>
+            </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+            <label class="info"> Etiqueta1 </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.label1" name="label1" #pass="ngModel"
+                required>
+        </div>
+        <div class="col-sm">
+            <label class="info"> Eriqueta2 </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.label2" name="label2" #pass="ngModel"
+                required>
+        </div>
+      </div>
+<div class="row">
+    <div class="col-sm">
+        <button (click)="postProducto()" type="submit" class="btn btn-info" [disabled]="productForm.invalid">
+            Crear Categria</button>
+    </div>
+</div>
+
+    </form>          
+  </div>

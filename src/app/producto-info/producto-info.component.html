@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="row">
+    <label> Producto Info</label>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <img class="img-responsive" src='../../assets/pera.jpeg'>
+    </div>
+    <div class="col-sm">
+      <label class="info"> Nombre</label>
+      <br>
+      <div class="info"> {{ this.productInfo[0].NOMBRE }} </div>
+    </div>
+    <div class="col-sm">
+      <label class="info"> PRESIO </label>
+      <br>
+      <div class="info"> {{ this.productInfo[0].PRECIO_UNITARIO }} </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <label class="info"> Descripcion</label>
+      <br>
+      <div class="info"> {{ this.productInfo[0].DETALLE }} </div>
+    </div>
+    <div class="col-sm">
+      <label class="info"> lIKE</label>
+      <br>
+      <div> {{ this.productInfo[0].DISLIKE }} </div>
+    </div>
+    <div class="col-sm">
+      <label class="info"> DISLIKE </label>
+      <br>
+      <div> {{ this.productInfo[0].LIKE }} </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <form #reportForm="ngForm">  
+      <label> Denunciar</label>
+      <br>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="denunciaF.detail" name="detail" #pass="ngModel"
+        required>
+        <button (click) = "enviarDenuncia()" 
+        type="submit" 
+      class="btn btn-primary" 
+      [disabled]="reportForm.invalid">Enviar denuncia</button>
+      </div>
+    </form>
+    </div>
+    <div class="col-sm">
+      <form #comentForm="ngForm">      
+        <label class="info"> Comentario</label>
+      <br>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="comentarF.detail" name="detail" #pass="ngModel"
+        required>
+        <button (click) = "enviarComentario()" 
+        type="submit" 
+      class="btn btn-primary" 
+      [disabled]="comentForm.invalid"> Enviar comentario</button>
+      </div>
+    </form>
+
+    </div>
+    <div class="col-sm">
+      <label class="info"> Contactar Vendedor </label>
+      <br>
+      <button (click) = "goChatRoom()" type="submit" class="btn btn-primary"> CHAT</button>
+    </div>
+
+    <div class="col-sm">
+      <br>
+      <button (click) = "addCarrito()" type="submit" class="btn btn-primary"> Agregar a carrito</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <label> Comentarios </label>
+  <br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"> Fecha</th>
+        <th scope="col"> User</th>
+        <th scope="col"> Comentario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" *ngFor="let item of comentarios">
+        <th> {{item.FECHA_HORA}}</th>
+        <th> {{item.NOMBRE }}</th>
+        <th> {{item.DESCRIPCION}}</th>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>

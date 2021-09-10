@@ -1,0 +1,95 @@
+<br>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm">
+
+      <label> Foto</label>
+      <br>
+      <img class="img-responsive" src={{this.dataForm[0].FOTO}}>
+
+    </div>
+    <form #nameForm = "ngForm">
+    <div class="col-sm">
+      <label> Nombre : </label>
+      <br>
+      <label class="info"> {{ this.dataForm[0].NOMBRE}} </label>
+      <input type="text" class="form-control" [(ngModel)]="userUpdate.name" name="name" #name="ngModel" required>
+      <button
+      (click) = "nameUpdate()" 
+        type="submit" 
+      class="btn btn-primary" 
+      [disabled]="nameForm.invalid">
+        Cambiar Nombre</button>
+    </div>
+  </form>
+    <form #lastnameForm = "ngForm">
+    <div class="col-sm">
+      <label> Apellido : </label>
+      <br>
+      <label class="info"> {{ this.dataForm[0].APELLIDO}} </label>
+      <input type="text" class="form-control" [(ngModel)]="userUpdate.lastname" name="lastname" #lastname="ngModel" required>
+      <button 
+      (click) = "lastnameUpdate()"
+      type="submit" 
+      class="btn btn-primary" 
+      [disabled]="lastnameForm.invalid">
+        Cambiar Apellido</button>
+    </div>
+  </form>
+    <form #emailForm="ngForm">
+      <div class="col-sm">
+        <label> Correo : </label>
+        <br>
+        <label class="info"> {{ this.dataForm[0].CORREO}} </label>
+        <input type="text" class="form-control" [(ngModel)]="userUpdate.email" name="email" #email="ngModel" required>
+        <button (click) = "mailUpdate()"
+                type="submit" 
+                class="btn btn-primary" 
+                [disabled]="emailForm.invalid"> Actualizar Correo</button>
+      </div>
+    </form>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <label> Fecha de nacimiento : </label>
+      <br>
+      <label class="info"> {{ this.getDate(this.dataForm[0].FECHA_NACIMIENTO)}} </label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-sm">
+      <label> Credito : </label>
+      <br>
+      <label class="info">{{ this.dataForm[0].CREDITO}} </label>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<div class="container">
+  <label class="info"> Aqui puede cambiar su contrasena </label>
+  <div class="row">
+    <div class="col-sm">
+      <label class="info"> Contrasena actual</label>
+      <input type="text" class="form-control">
+    </div>
+    <form #newpassForm="ngForm">
+    <div class="col-sm">
+      <label class="info"> Contrasena nueva </label>
+      <input  type="text"  class="form-control" [(ngModel)]="userUpdate.pass" name="pass" #pass="ngModel" required>
+
+      <button (click)="passUpdate()" type="submit" class="btn btn-primary" [disabled]="newpassForm.invalid">
+        Cambiar contrasena</button>
+
+    </div>
+    </form>
+
+
+
+  </div>
+
+</div>

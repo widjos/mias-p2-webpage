@@ -1,0 +1,44 @@
+<p> Crea una nueva categoria </p>
+
+<div class="container">
+    <div class="row">
+        <label class="info"> Agregue Una nueva Categoria </label>
+        <form #formCat="ngForm">
+            <div class="col-sm">
+                <label class="info"> Nueva Categoria</label>
+                <input type="text" class="form-control" [(ngModel)]="submitCategoria.name" name="name" #pass="ngModel"
+                    required>
+
+                <button (click)="addCategoria()" type="submit" class="btn btn-primary" [disabled]="formCat.invalid">
+                    Crear Categria</button>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <label class="info"> Categorias Existentes </label>
+        <br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col"> Id_Cateogoria</th>
+                    <th scope="col"> Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor="let item of categoriaForm">
+                    <th> {{item.ID_CATEGORIA}} </th>
+                    <th> {{item.NOMBRE }}</th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+.login-card {
+    width: 300px;
+    height: auto;
+    border-color: hotpink;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+label {
+    font-size: 1.3rem;
+    padding-bottom: 2%;
+}
+
+.card-child {
+    position: relative;
+
+}
+
+#card-message {
+    font-size: x-large;
+}

@@ -1,0 +1,79 @@
+<nav class="navbar navbar-light navbar-expand-lg" style="background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand" routerLinkActive="active" >MarketFake</a>
+    <div class=" navbar-collapse" >
+      <ul class="navbar-nav ml-auto">
+        <ng-container *ngIf="!isAuth()">
+          <li class="nav-item">
+            <a routerLink="/auth/login" class="nav-link" routerLinkActive="active">
+            Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/auth/register" class="nav-link">
+            Register
+            </a>
+          </li>
+         </ng-container>
+         <ng-container *ngIf="isAuth()">
+           <ng-container *ngIf="isAdmin()">
+            <li class="nav-item">
+              <a routerLink="/profile" class="nav-link" routerLinkActive="active">
+              Admin Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/category" class="nav-link" routerLinkActive="active">
+              Crear categoria
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a routerLink="/notifications" class="nav-link" routerLinkActive="active">
+              Notificaciones
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/report" class="nav-link" routerLinkActive="active">
+              Reportes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pointer" (click)="logout()">
+                Logout
+              </a>
+          </li>
+           </ng-container>
+           <ng-container *ngIf="!isAdmin()">
+            <li class="nav-item">
+              <a routerLink="/profile" class="nav-link" routerLinkActive="active">
+              My profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/carrito" class="nav-link" routerLinkActive="active">
+              Carrito
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/producto" class="nav-link" routerLinkActive="active">
+              Vender Producto
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/tienda" class="nav-link" routerLinkActive="active">
+              Tienda
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pointer" (click)="logout()">
+                Logout
+              </a>
+          </li>
+           </ng-container>
+         </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>
